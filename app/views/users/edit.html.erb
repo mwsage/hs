@@ -1,0 +1,11 @@
+<%= form_for @user, :html => {:multipart => true} do |f| %> <br>
+Name: <%= text_field(:user, :name) %> <br>
+Age: <%= number_field(:user, :age) %> <br>
+Sex (M/F): <%= text_field(:user, :sex) %> <br>
+Max Rent: <%= number_field(:user, :max_rent, in: 750.0..2000.0, step:25.0) %> <br>
+Earliest Move In Date: <%= date_field(:user, :min_move_in) %> <br>
+Latest Move Out Date: <%= date_field(:user, :max_move_out) %> <br>
+Max Travel Time (Minutes): <%= number_field(:user, :max_travel_time) %> <br>
+Image: <%= file_field(:user, :image) %> <br>
+<%= f.submit %>
+<% end %>

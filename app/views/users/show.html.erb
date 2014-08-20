@@ -1,0 +1,9 @@
+<div class="user-description">
+	<h2>Name: <%= @user.name %></h2>
+	<h2>Age: <%= @user.age %></h2>
+	<h2>Sex: <%= @user.sex %></h2>
+	<h2>Max Rent: <%= @user.max_rent %></h2>
+	<h2>Earliest Move in: <%= @user.min_move_in %></h2>
+	<h2>Latest Move out: <%= @user.max_move_out %></h2>
+	<h2><%= image_tag @user.image.url %>
+</div>

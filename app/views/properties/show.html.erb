@@ -1,0 +1,7 @@
+<div class="property-description">
+	<h2>Name: <%= @property.name %> </h2>
+	<h2>Rent: <%= number_to_currency @property.rent %> </h2>
+	<h2>Occupancy: <%= @property.occupancy %> </h2>
+	<h2>Beds: <%= @property.beds %> </h2>
+	<%= image_tag @property.image.url %> 
+</div>
