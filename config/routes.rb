@@ -2,12 +2,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
+  # resources :users
   devise_for :installs
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   resources :properties
-  resources :users
+
   
   
   # The priority is based upon order of creation: first created -> highest priority.
