@@ -3,29 +3,38 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+  end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    super
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    @user = User.find(current_user.id)
+    # if @user.update_attributes(user_params)
+    if @user.update_attributes(params[:user].permit(:name, :age, :sex, :max_rent, :min_move_in, :max_move_out, :max_travel_time, :image))
+      redirect_to :root 
+      # redirect_to :controller => 'user', :action => 'edit', :id => '@user'
+      # redirect_to :action => 'show', :id => @user
+    else
+    #   @users = User.find(:all)
+      render 'edit'
+    end
+  end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    super
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign

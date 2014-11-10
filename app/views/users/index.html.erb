@@ -1,0 +1,7 @@
+this page is views/index.html.erb made available through resources:users in routes.rb
+after adding the index to the controller at users/users_controller.rb
+ <br>
+
+ this is the controller: <%= params[:controller] %> <br>
+
+ <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>

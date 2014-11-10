@@ -27,9 +27,7 @@ gem 'spring',        group: :development
 gem 'activeadmin', github:'activeadmin/active_admin'
 gem 'devise'
 
-gem 'protected_attributes'
-
-gem 'pg'
+# gem 'protected_attributes'
 
 gem 'foundation-rails'
 
@@ -40,6 +38,10 @@ gem 'debugger'
 gem 'annotate'
 
 gem 'thin'
+
+gem 'pg'
+
+gem 'bootstrap-sass', '3.2.0.0'
 
 group :development, :test do
   gem 'sqlite3'

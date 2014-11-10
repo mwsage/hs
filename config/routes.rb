@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
+  # devise_for :users
+  root 'users#index'
+
+  #cannot find the '/' root - so rerouted / to users/index
+
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    registrations: "users/registrations", 
+    sessions: "users/sessions"
   }
+
+  resources :users, only: [:index]
+
   # resources :users
   devise_for :installs
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -9,6 +18,10 @@ Rails.application.routes.draw do
 
   resources :properties
 
+  get 'help'    => 'static_pages#help'
+  get 'about'   => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
+  get 'properties' => 'properties#index'
   
   
   # The priority is based upon order of creation: first created -> highest priority.
